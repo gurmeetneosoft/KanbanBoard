@@ -62,11 +62,7 @@ function Dashboard() {
             <div >
                 <div >
                     <img
-                        src={
-                            localStorage.getItem("img")
-                                ? localStorage.getItem("img")
-                                : profilePIcDefault
-                        }
+                        src={ profilePIcDefault }
                         alt="profile_pic"
                         className="img-thumbnail"
                         height={200}

@@ -13,10 +13,6 @@ const FormSignup = ({ submitForm }) => {
   return (
     <div className='form_content_right'>
       <form onSubmit={handleSubmit} className='form' noValidate>
-        <h1>
-          Get started with us today! Create your account by filling out the
-          information below.
-        </h1>
         <div className='form_inputs'>
           <label className='form_label'>Name</label>
           <input
@@ -77,7 +73,7 @@ const FormSignup = ({ submitForm }) => {
           {errors.password && <p>{errors.password}</p>}
         </div>
         <div className='form_inputs'>
-          <label className='form-label'>Confirm Password</label>
+          <label className='form_label'>Confirm Password</label>
           <input
             className='form_input'
             type='password'

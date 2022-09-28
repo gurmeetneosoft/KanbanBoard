@@ -45,9 +45,10 @@
 
 .card_title {
   flex: 1;
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.875rem;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card_footer {

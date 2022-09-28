@@ -32,8 +32,8 @@
   }
   
   .task_manager_boards_last {
-    flex-basis: 290px;
-    min-width: 290px;
+    flex-basis: 170px;
+    min-width: 170px;
   }
   
   .task_manager_boards_add-board {
@@ -41,7 +41,7 @@
     color: #000;
     border-radius: 10px;
     box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.12);
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
   }
   .task_manager_boards_add-board_edit {
