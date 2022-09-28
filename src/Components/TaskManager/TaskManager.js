@@ -97,7 +97,7 @@ function TaskManager() {
         t_cardIndex = boards[t_boardIndex]?.cards?.findIndex(
             (item) => item.id === targetCard.cid
         );
-        
+
         const tempBoards = [...boards];
         const sourceCard = tempBoards[s_boardIndex].cards[s_cardIndex];
         sourceCard.stage = targetCard.bid
@@ -111,7 +111,7 @@ function TaskManager() {
         });
     };
 
-    const next = (bid, cid) =>{
+    const next = (bid, cid) => {
         let s_boardIndex, s_cardIndex;
         s_boardIndex = boards.findIndex((item) => item.id === bid);
         if (s_boardIndex < 0) return;
@@ -129,7 +129,7 @@ function TaskManager() {
         setBoards(tempBoards);
     }
 
-    const prev = (bid, cid) =>{
+    const prev = (bid, cid) => {
         let s_boardIndex, s_cardIndex;
         s_boardIndex = boards.findIndex((item) => item.id === bid);
         if (s_boardIndex < 0) return;
@@ -170,7 +170,7 @@ function TaskManager() {
         setBoards(tempBoards);
     };
 
-   
+
 
     useEffect(() => {
         localStorage.setItem("kanban-data", JSON.stringify(boards));
@@ -178,32 +178,28 @@ function TaskManager() {
 
     return (
         <div className="task_manager">
-            <div className="task_manager_boards_container">
-                <div className="task_manager_boards">
-                    {boards.map((item) => (
-                        <Board
-                            key={item.id}
-                            board={item}
-                            addCard={addCardHandler}
-                            removeCard={removeCard}
-                            dragEnded={dragEnded}
-                            dragEntered={dragEntered}
-                            updateCard={updateCard}
-                            next={next}
-                            prev={prev}
-                        />
-                    ))}
-                    <div className="task_manager_boards_last">
-                        <Editable
-                            displayClass="task_manager_boards_add-board"
-                            editClass="task_manager_boards_add-board_edit"
-                            placeholder="Enter Card Name"
-                            text="Add Card"
-                            buttonText="Add Card"
-                            onSubmit={addboardHandler}
-                        />
-                    </div>
-                </div>
+            <div className="task_manager_boards">
+                <Editable
+                    displayClass="task_manager_boards_add-board"
+                    editClass="task_manager_boards_add-board_edit"
+                    placeholder="Enter Card Name"
+                    text="Add Card"
+                    buttonText="Add Card"
+                    onSubmit={addboardHandler}
+                />
+                {boards.map((item) => (
+                    <Board
+                        key={item.id}
+                        board={item}
+                        addCard={addCardHandler}
+                        removeCard={removeCard}
+                        dragEnded={dragEnded}
+                        dragEntered={dragEntered}
+                        updateCard={updateCard}
+                        next={next}
+                        prev={prev}
+                    />
+                ))}
             </div>
         </div>
     );

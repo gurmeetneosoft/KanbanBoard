@@ -76,7 +76,7 @@ function Card(props) {
                 onClose={() => setShowDropdown(false)}
               >
                 <p onClick={() => props.removeCard(props.boardId, id)}>
-                  Delete Card
+                  Delete
                 </p>
                 {props.boardId !== 4 && <p onClick={() => props.next(props.boardId, id)}>
                   Next
